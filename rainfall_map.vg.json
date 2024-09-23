@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Australian States Map with Rainfall Data",
+    "width": 800,
+    "height": 600,
+    "projection": {"type": "mercator"},
+    "data": {
+      "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/STE_2016_AUST.json",
+      "format": {"type": "topojson", "feature": "STE_2016_AUST"}
+    },
+    "transform": [
+      {
+        "lookup": "properties.STE_NAME16",  
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/states_aus.csv",
+            "format": {"type": "csv"}
+          },
+          "key": "State",  
+          "fields": ["Rain (mm) 0900- 0900"]  
+        }
+      }
+    ],
+    "mark": "geoshape",
+    "encoding": {
+      "color": {
+        "field": "Rain (mm) 0900- 0900",  
+        "type": "quantitative",
+        
+        "legend": {
+          "title": "Rainfall (mm)",
+          "orient": "bottom-right"
+        }
+      },
+      "tooltip": [
+        {"field": "properties.STE_NAME16", "type": "nominal", "title": "State Name"},
+        {"field": "properties.STE_CODE16", "type": "nominal", "title": "State Code"},
+        {"field": "Rain (mm) 0900- 0900", "type": "quantitative", "title": "Rainfall (mm)"}  
+      ]
+    }
+  }
+  

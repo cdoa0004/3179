@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Australian States Map with Rainfall Data</title>
+  <!-- Import Vega & Vega-Lite Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    #visualization { width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+  <div id="visualization">Loading visualization...</div>
+
+  <script type="text/javascript">
+    var spec = "rainfall_map.vg.json";  // Link to your Vega-Lite JSON file
+
+    // Embed the visualization
+    vegaEmbed('#visualization', spec).then(function(result) {
+      console.log("Visualization loaded successfully.");
+    }).catch(function(error) {
+      console.error("Error loading visualization:", error);
+      document.getElementById('visualization').innerText = "Error loading visualization. Check console for details.";
+    });
+  </script>
+</body>
+</html>
