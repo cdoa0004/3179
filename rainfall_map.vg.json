@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Australian States Map with Rainfall Data",
+    "title": "Average Rainfall in each State",
     "width": 800,
-    "height": 600,
+    "height": 400,
     "projection": {"type": "mercator"},
     "data": {
       "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/STE_2016_AUST.json",
