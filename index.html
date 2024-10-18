@@ -8,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       background: linear-gradient(135deg, #136c9fff, #3d948fff);
       color: black;  /* Text color */
       display: flex;
@@ -62,7 +62,6 @@
            text-align: center;  /* Center the map container text */
            margin-bottom: 20px;  /* Space below the map */
            margin: auto;  /* Center the visualization */
-           margin-left: 50%;
         }
 
     #pie-container {
@@ -90,11 +89,14 @@
   
   <div id="main-container">
     <!-- Title -->
-    <h1 style="text-align: center;">Rainfall in Australia</h1>
-    <h2 style="text-align: center;">on 7 September 2024</h2>
+    <h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif; font-size: 48px;">Rainfall in Australia</h1>
+    <h2 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 27px;">on 7 September 2024</h2>
+    <p style="text-align: center;" >All data is sourced from Bureau of Meteorology Australia on the above date - Christina Doan 33120331
+   </p>
+  
 
           <!-- Container for the bar chart -->
-          <div id="map">
+          <div id="map-container">
             <div id="visualization">Loading bar chart...</div>
           </div>
     <!-- Container for the map and additional information -->
@@ -109,11 +111,8 @@
          </p>
       <p>
         South Australia follows with a wind speed close to 5 m/sec. The geographical location in the Southern Ocean may result in having higher wind speeds. 
-     
-      </p>
-
-      <p>
         New South Wales has the lowest average wind speed, being just above 3m/sec. 
+    
       </p>
       <h3>
         Evapotranspiration is a combination of processes by which water moves from the land surface to the atmosphere.

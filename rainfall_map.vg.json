@@ -4,37 +4,55 @@
     "height": 400,
     "projection": {"type": "mercator"},
     "data": {
-      "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/STE_2016_AUST.json",
-      "format": {"type": "topojson", "feature": "STE_2016_AUST"}
+        "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/STE_2016_AUST.json",
+        "format": {"type": "topojson", "feature": "STE_2016_AUST"}
     },
     "transform": [
-      {
-        "lookup": "properties.STE_NAME16",  
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/states_aus.csv",
-            "format": {"type": "csv"}
-          },
-          "key": "State",  
-          "fields": ["Rain (mm) 0900- 0900"]  
+        {
+            "lookup": "properties.STE_NAME16",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/states_aus.csv",
+                    "format": {"type": "csv"}
+                },
+                "key": "State",
+                "fields": ["Rain (mm) 0900- 0900"]
+            }
         }
-      }
     ],
     "mark": "geoshape",
     "encoding": {
-      "color": {
-        "field": "Rain (mm) 0900- 0900",  
-        "type": "quantitative",
-        
-        "legend": {
-          "title": "Rainfall (mm)",
-          "orient": "bottom-right"
-        }
-      },
-      "tooltip": [
-        {"field": "properties.STE_NAME16", "type": "nominal", "title": "State Name"},
-        {"field": "Rain (mm) 0900- 0900", "type": "quantitative", "title": "Rainfall (mm)", "format": ".2f"}  
-      ]
+        "color": {
+            "field": "properties.STE_NAME16", 
+            "type": "nominal",
+            "scale": {
+                "domain": [
+                    "New South Wales", 
+                    "Northern Territory", 
+                    "Queensland", 
+                    "South Australia", 
+                    "Tasmania", 
+                    "Victoria", 
+                    "Western Australia"
+                ],
+                "range": [
+                    "#00be6fff", 
+                    "#517cb7ff",  
+                    "#fabe04ff",  
+                    "#6bc8ccff",  
+                    "#fe8c4eff",  
+                    "#7e5f90ff",  
+                    "#d35f91ff "  
+                ]
+            },
+            "legend": {
+                "title": "State",
+                "orient": "bottom-right"
+            }
+        },
+        "tooltip": [
+            {"field": "properties.STE_NAME16", "type": "nominal", "title": "State Name"},
+            {"field": "Rain (mm) 0900- 0900", "type": "quantitative", "title": "Rainfall (mm)", "format": ".2f"}
+        ]
     }
-  }
-  
+}

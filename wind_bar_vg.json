@@ -18,16 +18,25 @@
         "field": "State",  
         "type": "nominal",
         "scale": {
+          "domain": [
+              "New South Wales", 
+              "Northern Territory", 
+              "Queensland", 
+              "South Australia", 
+              "Tasmania", 
+              "Victoria", 
+              "Western Australia"
+          ],
           "range": [
-            "#cce7ff",   
-            "#99d1ff",  
-            "#66bbff", 
-            "#3399ff",  
-            "#0077e6",  
-            "#005bb5",  
-            "#003d80"   
+              "#00be6fff", 
+              "#517cb7ff",  
+              "#fabe04ff",  
+              "#6bc8ccff",  
+              "#fe8c4eff",  
+              "#7e5f90ff",  
+              "#d35f91ff "  
           ]
-        },
+      },
         "legend": {
           "title": "State", 
           "orient": "right"
