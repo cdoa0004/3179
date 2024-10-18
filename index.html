@@ -29,10 +29,17 @@
     <h2>Temperature Ranges by State</h2>
     <div id="chart">Loading chart...</div>
   </div>
+
   <!-- Container for the wind speed chart -->
   <div id="wind-container">
-    <h2>Temperature Ranges by State</h2>
+    <h2>Average Wind Speed by State</h2>
     <div id="wind">Loading chart...</div>
+  </div>
+
+  <!-- Container for the evap pie chart -->
+  <div id="evap">
+    <h2>Evapotranspiration by State</h2>
+    <div id="evap">Loading chart...</div>
   </div>
 
 
@@ -71,6 +78,19 @@
       }).catch(function(error) {
         console.error("Error loading temperature chart:", error);
         document.getElementById('wind').innerText = "Error loading chart. Check console for details.";
+      });
+    </script>
+
+     <!-- Vega-Lite evap chart script -->
+     <script type="text/javascript">
+      var tempSpec = "evap_pie_vg.json";  // Link to your Vega-Lite JSON file for the wind chart
+  
+      // Embed the temperature chart
+      vegaEmbed('#evap', tempSpec).then(function(result) {
+        console.log("Evap chart loaded successfully.");
+      }).catch(function(error) {
+        console.error("Error loading temperature chart:", error);
+        document.getElementById('evap').innerText = "Error loading chart. Check console for details.";
       });
     </script>
   

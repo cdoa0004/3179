@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Evapotranspiration by State",
+    "width": 600,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/states_aus.csv",
+      "format": {"type": "csv"}
+    },
+    "mark": "bar",  
+    "encoding": {
+      "y": {  
+        "field": "State",
+        "type": "nominal",
+        "axis": {"title": "State"}
+      },
+      "x": {  
+        "field": "Evapotrans-piration (mm) 0000- 2400",
+        "type": "quantitative",
+        "axis": {"title": "Evapotranspiration (mm)"}
+      },
+      "color": {
+          "field": "State",  
+          "type": "nominal",
+          "scale": {
+            "range": [
+              "#cce7ff",   
+              "#99d1ff",  
+              "#66bbff", 
+              "#3399ff",  
+              "#0077e6",  
+              "#005bb5",  
+              "#003d80"   
+            ]
+          },
+          "legend": {
+            "title": "State", 
+            "orient": "right"
+          }
+        },  
+      "tooltip": [
+        {"field": "State", "type": "nominal", "title": "State"},
+        {"field": "Evapotrans-piration (mm) 0000- 2400", "type": "quantitative", "title": "Evapotranspiration (mm)", "format": ".2f"}
+      ]
+    }
+  }
+  
