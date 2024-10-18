@@ -29,6 +29,12 @@
     <h2>Temperature Ranges by State</h2>
     <div id="chart">Loading chart...</div>
   </div>
+  <!-- Container for the wind speed chart -->
+  <div id="wind-container">
+    <h2>Temperature Ranges by State</h2>
+    <div id="wind">Loading chart...</div>
+  </div>
+
 
   <script type="text/javascript">
     var spec = "rainfall_map.vg.json";  // Link to your Vega-Lite JSON file
@@ -54,6 +60,20 @@
       document.getElementById('chart').innerText = "Error loading chart. Check console for details.";
     });
   </script>
+
+    <!-- Vega-Lite wind chart script -->
+    <script type="text/javascript">
+      var tempSpec = "wind_bar_vg.json";  // Link to your Vega-Lite JSON file for the wind chart
+  
+      // Embed the temperature chart
+      vegaEmbed('#wind', tempSpec).then(function(result) {
+        console.log("Wind chart loaded successfully.");
+      }).catch(function(error) {
+        console.error("Error loading temperature chart:", error);
+        document.getElementById('wind').innerText = "Error loading chart. Check console for details.";
+      });
+    </script>
+  
 
 </body>
 </html>

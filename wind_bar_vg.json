@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Average Wind Speed by State",
+    "width": 600,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/states_aus.csv",
+      "format": {"type": "csv"}
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "State", "type": "nominal", "axis": {"title": "State"}},
+      "y": {
+        "field": "Average 10m Wind Speed (m/sec)",
+        "type": "quantitative",
+        "axis": {"title": "Average Wind Speed (m/sec)"}
+      },
+      "color": {
+        "field": "State",  
+        "type": "nominal",
+        "scale": {
+          "range": [
+            "#cce7ff",   
+            "#99d1ff",  
+            "#66bbff", 
+            "#3399ff",  
+            "#0077e6",  
+            "#005bb5",  
+            "#003d80"   
+          ]
+        },
+        "legend": {
+          "title": "State", 
+          "orient": "right"
+        }
+      },
+      "tooltip": [
+        {"field": "State", "type": "nominal", "title": "State"},
+        {"field": "Average 10m Wind Speed (m/sec)", "type": "quantitative", "title": "Average Wind Speed (m/sec)", "format": ".2f"}
+      ]
+    }
+  }
+  
