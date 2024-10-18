@@ -1,8 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Evapotranspiration by State",
-    "width": 400,
-    "height": 400,
+    "width": 300,
+    "height": 300,
     "data": {
       "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/states_aus.csv",
       "format": {"type": "csv"}
