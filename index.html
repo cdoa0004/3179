@@ -9,53 +9,110 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #136c9fff, #3d948fff);
+      color: black;  /* Text color */
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 0;  /* Remove default margin */
+      padding: 20px;  /* Add padding to body */
     }
-    #map-container, #bar-pie-container, #line-chart-container {
-      width: 100%;
-      margin: 20px auto;
-      text-align: center;
+
+    #main-container {
+    background-color: white;  /* White background for the main container */
+    color: black;  /* Text color inside the container */
+    padding: 20px;  /* Padding for spacing */
+    border-radius: 10px;  /* Rounded corners */
+    width: 80%;  /* Width of the main container */
+    max-width: 1000px;  /* Maximum width */
+    margin: auto;  /* Center the container */
+}
+
+    #bar-container {
+      display: inline-block;  /* Make the map container inline */
+      width: 60%;  /* Set width for the map */
+      vertical-align: middle;
+    }
+    #info-container {
+      display: inline-block;  /* Make the info container inline */
+      width: 30%;  /* Set width for the info container */
+      background-color: white;  /* White background for the container */
+      color: black;  /* Text color inside the container */
+      padding: 10px;  /* Padding for spacing */
+      margin-left: 20px;  /* Space between the map and info container */
+      border-radius: 5px;  /* Rounded corners for the container */
+      text-align: left;  /* Align text to the left */
+      vertical-align: top;  /* Align to the top */
     }
     #bar-pie-container {
       display: flex;
       justify-content: space-around;
+      width: 100%;
+      max-width: 800px;  /* Optional: limit the maximum width */
+      margin: 20px auto;
     }
-    #bar-container, #pie-container {
+    #map-container{
       width: 45%;
+      background-color: white;  /* White background for charts */
+      color: black;  /* Text color inside the container */
+      padding: 10px;  /* Padding for spacing */
+      border-radius: 5px;  /* Rounded corners for the container */
+    }
+
+    #pie-container {
+      width: 45%;
+      background-color: white;  /* White background for charts */
+      color: black;  /* Text color inside the container */
+      padding: 10px;  /* Padding for spacing */
+      border-radius: 5px;  /* Rounded corners for the container */
+
+    }
+    #line-chart-container {
+      width: 100%;
+      max-width: 800px;  /* Optional: limit the maximum width */
+      margin: 20px auto;
+      text-align: center;  /* Center align the text */
+      background-color: white;  /* White background for the line chart */
+      color: black;  /* Text color inside the container */
+      padding: 10px;  /* Padding for spacing */
+      border-radius: 5px;  /* Rounded corners for the container */
     }
   </style>
 </head>
 <body>
-  <!-- Title -->
-  <h1>Australian Climate Data Visualizations</h1>
+  
+  <div id="main-container">
+    <!-- Title -->
+    <h1 style="text-align: center;">Rainfall in Australia</h1>
+    <h2 style="text-align: center;">on 7 September 2024</h2>
 
-  <!-- Container for the map -->
-  <div id="map-container">
-    <!-- <h2>Rainfall Map</h2> -->
-    <div id="visualization">Loading map...</div>
-  </div>
-
-  <!-- Bar and Pie chart containers side by side -->
-  <div id="bar-pie-container">
-    <!-- Container for the bar chart -->
+          <!-- Container for the bar chart -->
+          <div id="map">
+            <div id="visualization">Loading bar chart...</div>
+          </div>
+    <!-- Container for the map and additional information -->
     <div id="bar-container">
       <h2>Average Wind Speed by State</h2>
-      <div id="wind">Loading bar chart...</div>
+      <div id="wind">Loading map...</div>
     </div>
 
-    <!-- Container for the pie chart -->
-    <div id="pie-container">
-      <h2>Evapotranspiration by State</h2>
-      <div id="evap">Loading pie chart...</div>
+    <!-- New container for additional information -->
+    <div id="info-container">
+      <p>It’s evident that the closer a region is to the equator, the hotter it is in comparison to areas that are further away, but what exactly is the difference with the weather, in regards to rainfall? The map on the left shows Victoria and Tasmania having the least amount of rainfall, in comparison to the other states of Australia with 4.70mm and 4.69mm, respectively. What’s interesting is Victoria having more rainfall than Tasmania, even though Tasmania is closer to the South Pole. South Adelaide follows, then New South Wales, Western Australia, Queensland then Northern Territory.</p>
     </div>
-  </div>
 
-  <!-- Container for the line chart -->
-  <div id="line-chart-container">
-    <h2>Temperature Ranges by State</h2>
-    <div id="chart">Loading line chart...</div>
+
+      <!-- Container for the pie chart -->
+      <div id="pie-container">
+        <h2>Evapotranspiration by State</h2>
+        <div id="evap">Loading pie chart...</div>
+      </div>
+
+    <!-- Container for the line chart -->
+    <div id="line-chart-container">
+      <h2>Temperature Ranges by State</h2>
+      <div id="chart">Loading line chart...</div>
+    </div>
   </div>
 
   <script type="text/javascript">

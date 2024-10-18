@@ -1,7 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Average Rainfall in each State",
-    "width": 800,
+    "width": 600,
     "height": 400,
     "projection": {"type": "mercator"},
     "data": {
@@ -34,7 +33,7 @@
       },
       "tooltip": [
         {"field": "properties.STE_NAME16", "type": "nominal", "title": "State Name"},
-        {"field": "Rain (mm) 0900- 0900", "type": "quantitative", "title": "Rainfall (mm)"}  
+        {"field": "Rain (mm) 0900- 0900", "type": "quantitative", "title": "Rainfall (mm)", "format": ".2f"}  
       ]
     }
   }

@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #136c9fff, #3d948fff);  /* Gradient background */
+    color: black;  /* Text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;  /* Remove default margin */
+    padding: 20px;  /* Add padding to body */
+}
+
+#main-container {
+    background-color: white;  /* White background for the main container */
+    color: black;  /* Text color inside the container */
+    padding: 20px;  /* Padding for spacing */
+    border-radius: 10px;  /* Rounded corners */
+    width: 80%;  /* Width of the main container */
+    max-width: 1000px;  /* Maximum width */
+    margin: auto;  /* Center the container */
+}
+
+#map-container {
+    display: inline-block;  /* Make the map container inline */
+    width: 60%;  /* Set width for the map */
+    vertical-align: top;  /* Align to the top */
+}
+
+#info-container {
+    display: inline-block;  /* Make the info container inline */
+    width: 30%;  /* Set width for the info container */
+    padding: 10px;  /* Padding for spacing */
+    margin-left: 20px;  /* Space between the map and info container */
+    border-radius: 5px;  /* Rounded corners for the container */
+    text-align: left;  /* Align text to the left */
+    vertical-align: top;  /* Align to the top */
+}
+
+#bar-pie-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;  /* Optional: limit the maximum width */
+    margin: 20px auto;
+}
+
+#bar-container, #pie-container {
+    width: 45%;
+    padding: 10px;  /* Padding for spacing */
+    border-radius: 5px;  /* Rounded corners for the container */
+    background-color: white;  /* White background for charts */
+    color: black;  /* Text color inside the container */
+}
+
+#line-chart-container {
+    width: 100%;
+    max-width: 800px;  /* Optional: limit the maximum width */
+    margin: 20px auto;
+    text-align: center;  /* Center align the text */
+    padding: 10px;  /* Padding for spacing */
+    border-radius: 5px;  /* Rounded corners for the container */
+    background-color: white;  /* White background for the line chart */
+    color: black;  /* Text color inside the container */
+}
