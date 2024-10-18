@@ -44,20 +44,24 @@
       text-align: left;  /* Align text to the left */
       vertical-align: top;  /* Align to the top */
     }
-    #bar-pie-container {
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      max-width: 800px;  /* Optional: limit the maximum width */
-      margin: 20px auto;
-    }
-    #map-container{
-      width: 45%;
-      background-color: white;  /* White background for charts */
+
+    #evap-info-container {
+      display: inline-block;  /* Make the info container inline */
+      width: 30%;  /* Set width for the info container */
+      background-color: white;  /* White background for the container */
       color: black;  /* Text color inside the container */
       padding: 10px;  /* Padding for spacing */
+      margin-left: 20px;  /* Space between the map and info container */
       border-radius: 5px;  /* Rounded corners for the container */
+      text-align: left;  /* Align text to the left */
+      vertical-align: top;  /* Align to the top */
     }
+    
+    #map-container {
+           text-align: center;  /* Center the map container text */
+           margin-bottom: 20px;  /* Space below the map */
+           margin: auto;  /* Center the visualization */
+        }
 
     #pie-container {
       width: 45%;
@@ -65,6 +69,7 @@
       color: black;  /* Text color inside the container */
       padding: 10px;  /* Padding for spacing */
       border-radius: 5px;  /* Rounded corners for the container */
+      display: inline-block;
 
     }
     #line-chart-container {
@@ -98,9 +103,29 @@
 
     <!-- New container for additional information -->
     <div id="info-container">
-      <p>It’s evident that the closer a region is to the equator, the hotter it is in comparison to areas that are further away, but what exactly is the difference with the weather, in regards to rainfall? The map on the left shows Victoria and Tasmania having the least amount of rainfall, in comparison to the other states of Australia with 4.70mm and 4.69mm, respectively. What’s interesting is Victoria having more rainfall than Tasmania, even though Tasmania is closer to the South Pole. South Adelaide follows, then New South Wales, Western Australia, Queensland then Northern Territory.</p>
+      <p>The average wind speed is measured in metres per second (m/sec). All states have a wind speed ranging from 3.00 to 4 m/sec. However, Tasmania is shown to be an outlier with an average wind speed of 7.60 m/sec. This is evident through the location of Tasmania in comparison to the rest of the states; Tamsmania is the furthest away from the equator. 
+         </p>
+      <p>
+        South Australia follows with a wind speed close to 5 m/sec. The geographical location in the Southern Ocean may result in having higher wind speeds. 
+     
+      </p>
+
+      <p>
+        New South Wales has the lowest average wind speed, being just above 3m/sec. 
+      </p>
+      <h3>
+        Evapotranspiration is a combination of processes by which water moves from the land surface to the atmosphere.
+      </h3>
     </div>
 
+     <!-- New container for additional information -->
+     <div id="evap-info-container">
+      <p>The more sun in an area, the more heat that hits the surface of the Earth, evaporating water from the land. Evidently, Victoria and Tasmania have the least amount of evapotranspiration with just above 2.00mm. From the data, both those states have the lowest Max and Min temperature, in comparison to the rest of Australia. This is shown in the line graph below. 
+      </p>
+      <p>
+        Northern Territory has the highest temperature, with the max and min temperature being 34.94 and 21.56 degrees celsius respectively. Therefore, the Northern Territory has the highest evapotranspiration of 6.24. We can conclude that the amount of water that is evaporated from a region, is dependent on the temperature. The colder the state is, the less evaporation there is.
+      </p>
+    </div>
 
       <!-- Container for the pie chart -->
       <div id="pie-container">
