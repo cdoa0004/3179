@@ -7,12 +7,28 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
   <style>
-    body { font-family: Arial, sans-serif; }
-    #visualization { width: 100%; height: 100%; }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: space-between;
+    }
+    #map-container, #chart-container {
+      width: 48%; /* Adjust the width to balance space between map and chart */
+    }
   </style>
 </head>
 <body>
-  <div id="visualization">Loading visualization...</div>
+  <!-- Container for the map -->
+  <div id="map-container">
+    <h2>Rainfall Map</h2>
+    <div id="visualization">Loading map...</div>
+  </div>
+
+  <!-- Container for the temperature chart -->
+  <div id="chart-container">
+    <h2>Temperature Ranges by State</h2>
+    <div id="chart">Loading chart...</div>
+  </div>
 
   <script type="text/javascript">
     var spec = "rainfall_map.vg.json";  // Link to your Vega-Lite JSON file
@@ -25,5 +41,19 @@
       document.getElementById('visualization').innerText = "Error loading visualization. Check console for details.";
     });
   </script>
+
+   <!-- Vega-Lite temperature chart script -->
+   <script type="text/javascript">
+    var tempSpec = "temp_line_vg.json";  // Link to your Vega-Lite JSON file for the temperature chart
+
+    // Embed the temperature chart
+    vegaEmbed('#chart', tempSpec).then(function(result) {
+      console.log("Temperature chart loaded successfully.");
+    }).catch(function(error) {
+      console.error("Error loading temperature chart:", error);
+      document.getElementById('chart').innerText = "Error loading chart. Check console for details.";
+    });
+  </script>
+
 </body>
 </html>

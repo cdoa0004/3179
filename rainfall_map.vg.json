@@ -34,7 +34,6 @@
       },
       "tooltip": [
         {"field": "properties.STE_NAME16", "type": "nominal", "title": "State Name"},
-        {"field": "properties.STE_CODE16", "type": "nominal", "title": "State Code"},
         {"field": "Rain (mm) 0900- 0900", "type": "quantitative", "title": "Rainfall (mm)"}  
       ]
     }

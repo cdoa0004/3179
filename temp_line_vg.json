@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Temperature Ranges by State",
+    "width": 600,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/cdoa0004/3179/refs/heads/main/states_aus.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+      {"fold": ["Max Temp", "Min Temp"], "as": ["Temperature Type", "Temperature"]}
+    ],
+    "layer": [
+      {
+        "mark": {"type": "line", "tooltip": true},
+        "encoding": {
+          "x": {"field": "State", "type": "nominal", "axis": {"title": "State"}},
+          "y": {"field": "Temperature", "type": "quantitative", "axis": {"title": "Temperature (°C)"}},
+          "color": {
+            "field": "Temperature Type",
+            "type": "nominal",
+            "scale": {"range": ["red", "blue"]},
+            "legend": {"title": "Temperature Type", "orient": "right"}
+          },
+          "tooltip": [
+            {"field": "State", "type": "nominal", "title": "State"},
+            {"field": "Temperature", "type": "quantitative", "title": "Temperature (°C)", "format": ".2f"}
+          ]
+        }
+      },
+      {
+        "mark": {"type": "point", "tooltip": true},
+        "encoding": {
+          "x": {"field": "State", "type": "nominal"},
+          "y": {"field": "Temperature", "type": "quantitative"},
+          "color": {
+            "field": "Temperature Type",
+            "type": "nominal",
+            "scale": {"range": ["red", "blue"]}
+          },
+          "tooltip": [
+            {"field": "State", "type": "nominal", "title": "State"},
+            {"field": "Temperature", "type": "quantitative", "title": "Temperature (°C)", "format": ".2f"}
+          ]
+        }
+      }
+    ]
+  }
+  
